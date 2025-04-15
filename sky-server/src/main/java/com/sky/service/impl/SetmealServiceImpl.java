@@ -162,11 +162,7 @@ public class SetmealServiceImpl implements SetmealService {
     @Transactional
     public void deleteBatch(List<Long> ids) {
         ids.forEach(id -> {
-            Setmeal setmeal = setmealMapper.getById(id);
-            if(StatusConstant.ENABLE == setmeal.getStatus()){
-                //起售中的套餐不能删除
-                throw new DeletionNotAllowedException(MessageConstant.SETMEAL_ON_SALE);
-            }
+
         });
 
         ids.forEach(setmealId -> {
