@@ -165,11 +165,6 @@ public class SetmealServiceImpl implements SetmealService {
 
         });
 
-        ids.forEach(setmealId -> {
-            //删除套餐表中的数据
-            setmealMapper.deleteById(setmealId);
-            //删除套餐菜品关系表中的数据
-            setmealDishMapper.deleteBySetmealId(setmealId);
-        });
+
     }
 }
